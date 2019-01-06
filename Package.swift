@@ -10,14 +10,17 @@ let package = Package(
             targets: ["PerfectRequestLogger"]),
     ],
     dependencies: [
-	.package(url: "https://github.com/ryancoyne/Perfect-Logger.git", from: "4.0.0"),
+        .package(url: "https://github.com/ryancoyne/Perfect-Logger.git", from: "4.0.0"),
     ],
     targets: [
         .target(
             name: "PerfectRequestLogger",
-            dependencies: ["PerfectLogger"]),
+            dependencies: ["PerfectLogger"],
+            path: "Sources/PerfectRequestLogger"
+        ),
         .testTarget(
             name: "PerfectRequestLoggerTests",
-            dependencies: ["PerfectRequestLogger"]),
+            dependencies: ["PerfectRequestLogger"]
+        ),
     ]
 )
